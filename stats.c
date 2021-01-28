@@ -3,9 +3,19 @@
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
+    
+    if(setlength!=0)
+    {
     s.average = 0;
     s.min = *numberset;
     s.max = *numberset;
+    }
+    else
+    {
+    s.average = NAN;
+    s.min = NAN;
+    s.max = NAN; 
+    }
     
     for(int x=0;x<setlength;x++)
     {
